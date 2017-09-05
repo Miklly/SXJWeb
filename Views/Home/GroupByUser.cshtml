@@ -1,0 +1,42 @@
+﻿@model List<SXJWeb.ViewModels.OrderGroupByUser>
+
+    <div data-page="group-by-item" class="page">
+        <div class="page-content">
+            @if (Model != null && Model.Count > 0)
+            {
+                foreach (var item in Model)
+                {
+                    <div class="content-block-title">@item.wx</div>
+                    <div class="list-block media-list">
+                        <ul>
+                            @foreach (var user in item.users)
+                            {
+                                <li class="swipeout">
+                                    <div class="swipeout-content">
+                                        <a href="home/detail/@user.ID" class="item-link item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title-row">
+                                                    <div class="item-title">@user.Name</div>
+                                                    <div class="item-after">待发:<span class="badge">@user.ItemList.Count</span></div>
+                                                </div>
+                                                <div class="item-subtitle">@user.Phone</div>
+                                                <div class="item-text">@user.Address</div>
+                                            </div>
+                                        </a>
+                                        <div class="swipeout-actions-right">
+                                            <!-- We add data-confirm and data-confirm-title attributes -->
+                                            <a href="#" d-id="@user.ID" class="action1 bg-red" data-confirm="确定删除这条记录?" data-confirm-title="删除确认">删除</a>
+                                        </div>
+                                    </div>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+            }
+            else
+            {
+                <div style="text-align:center;font-size:24px;margin-top:10px;">没有数据!</div>
+            }
+        </div>
+    </div>

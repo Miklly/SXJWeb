@@ -1,0 +1,81 @@
+﻿@model SXJWeb.Models.OrderInfo
+
+<div id="editOrder" data-page="edit-order" class="page">
+    <div class="page-content">
+        <form id="frmAddOrder" action="/home/add" method="post">
+        <div class="list-block inset">
+            <ul>
+                <li>
+                    <a href="#" class="item-link smart-select" data-back-on-select="true">
+                        <!-- select -->
+                        <select name="ChannelID">
+                          <option value="als1888" selected>VIP</option>
+                          <option value="ss16998">生活馆</option>
+                          <option value="als2888">生活馆3</option>
+                          <option value="as-shenghuo">爱尚生活</option>
+                          <option value="abc28899">菲菲家</option>
+                          <option value="yap0910">玩潮流</option>
+                        </select>
+                        <div class="item-content">
+                          <div class="item-inner">
+                            <!-- Select label -->
+                            <div class="item-title">微信号</div>
+                            <!-- Selected value, not required -->
+                            <div class="item-after"></div>
+                          </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label">姓名</div>
+                            <div class="item-input">
+                                <input type="text" name="Name" placeholder="Your name">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label">电话</div>
+                            <div class="item-input">
+                                <input type="tel" name="Phone" placeholder="">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="item-content">
+                        <div class="item-inner">
+                            <div class="item-title label">详细地址</div>
+                            <div class="item-input">
+                                <textarea class="resizable" name="Address" placeholder="例:广东省广州市白云区金钟横路29号"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+            <div class="list-block inset"><input type="submit" class="button button-big button-fill color-green" id="addSubmit" value="提交" /></div>
+            <div class="card card-small" style="clear:both;">
+                <div class="card-content">
+                    <a href="#" id="btnAddItem" class="link">
+                        <img src="images/add.jpg" width="100%" />
+                    </a>
+                </div>
+                <div class="card-footer card-small-footer" style="padding:0;">
+                    <div style="display:none;">
+                        <input type="file" id="inputFile" />
+                        <input type="hidden" name="itemCount" value="0" id="addItemCount" />
+                    </div>
+                    <div><div style="float:left;line-height:36px;font-weight:600">复制图片:</div><textarea id="txtFile"></textarea></div>
+                </div>
+            </div>
+            <div id="addItemList">
+                
+            </div>
+        </form>
+    </div>
+</div>

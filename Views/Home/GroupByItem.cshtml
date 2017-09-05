@@ -1,0 +1,27 @@
+@model List<SXJWeb.ViewModels.OrderGroupByItem>
+
+<div data-page="group-by-item" class="page">
+    <div class="page-content">
+        @if (Model != null && Model.Count > 0)
+        {
+            foreach (var item in Model)
+            {
+            <a href="pages/detail.html?img=@item.imageID=" class="item-link item-content">
+                <div class="card card-small">
+                    <div class="card-content">
+                        <img src="@item.image" width="100%" />
+                    </div>
+                    <div class="card-footer card-small-footer">
+                        <div>@item.supplier</div>
+                        <div class="badge">@item.count</div>
+                    </div>
+                </div>
+            </a>
+            }
+        }
+        else
+        {
+            <div style = "text-align:center;font-size:24px;margin-top:10px;">没有数据!</div >
+        }
+    </div>
+</div>
